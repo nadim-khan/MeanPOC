@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const { mongoose } = require('./db.js');
 var userProfileController = require('./controllers/userProfileController');
+var userRoleController=require('./controllers/userRoleController');
 var port=process.env.port||3000;
 var currentdate = new Date();
 var date = "Last Sync: " + currentdate.getDay() + "/" + currentdate.getMonth() 
@@ -23,3 +24,4 @@ app.listen(port, () => {
 
 
 app.use('/userprofiles', userProfileController);
+app.use('/userroles',userRoleController);

@@ -55,10 +55,12 @@ router.put('/:id', (req, res) => {
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
     var user = {
-        name: req.body.name,
-        position: req.body.position,
-        office: req.body.office,
-        salary: req.body.salary,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        username: req.body.username,
+        profileimage: req.body.profileimage,
+        email: req.body.email,
+        password: req.body.password,
     };
     UserProfile.findByIdAndUpdate(req.params.id, { $set: user }, { new: true }, (err, doc) => {
         if (!err) {
